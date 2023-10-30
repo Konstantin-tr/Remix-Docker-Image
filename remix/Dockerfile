@@ -12,10 +12,11 @@ FROM manifest as packages
 WORKDIR /remix
 RUN npm ci --include=dev
 
-# Prune all node modules you won't use in production
+# Prune all node modules you won't use in production and set ENV
 FROM packages as prod-packages
 WORKDIR /remix
-RUN npm prune --production
+ENV NODE_ENV production
+RUN npm prune
 
 # Copy the source files
 FROM packages as copy-source
