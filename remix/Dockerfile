@@ -1,6 +1,5 @@
 # Source image
 FROM node:21-bullseye-slim as base
-ENV NODE_ENV production
 
 # Copy package.json and package-lock.json
 FROM base as manifest
@@ -10,7 +9,7 @@ COPY package*.json ./
 # Install the node modules
 FROM manifest as packages
 WORKDIR /remix
-RUN npm ci --include=dev
+RUN npm ci
 
 # Prune all node modules you won't use in production and set ENV
 FROM packages as prod-packages
