@@ -1,5 +1,5 @@
 # Remix-Dockerization
-
+[![Docker Image CI](https://github.com/Konstantin-tr/Remix-Dockerization/actions/workflows/docker-image.yml/badge.svg)](https://github.com/Konstantin-tr/Remix-Dockerization/actions/workflows/docker-image.yml)
 This repo demonstrates one possible way to dockerize a Remix application.
 The approach used was inspired by the Dockerfile that is part of the [Indie Stack](https://github.com/remix-run/indie-stack/).
 The Dockerfile in this repo is similar to the Indie Stack one but excludes the Prisma setup and has some other small changes.
